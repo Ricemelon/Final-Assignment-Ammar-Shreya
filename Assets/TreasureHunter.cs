@@ -22,8 +22,8 @@ public class TreasureHunter : MonoBehaviour
     public int count = 0;
     public MouseLook view;
     CollectibleTreasure grabbed;
-
     AudioSource audio;
+    
 
     private float presize = 1f;
     void Start()
