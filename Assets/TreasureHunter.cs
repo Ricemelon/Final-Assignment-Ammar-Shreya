@@ -23,6 +23,8 @@ public class TreasureHunter : MonoBehaviour
     public MouseLook view;
     CollectibleTreasure grabbed;
 
+    AudioSource audio;
+
     private float presize = 1f;
     void Start()
     {
@@ -34,8 +36,12 @@ public class TreasureHunter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("6")){
-            print(center.transform.rotation.x);
+        RaycastHit hit;
+        if(Physics.Raycast(center.transform.position,center.transform.forward,out hit, 100.0f)){
+            if(hit.collider.gameObject.layer == 9){
+                print("hit");
+                hit.collider.gameObject.GetComponent<AudioSource>().mute = true;
+            }
         }
         if(Input.GetKeyDown("9")){ //code for how to raycast was based off of Nick Rewkowski's VrPawn teleport code
             RaycastHit outHit;
