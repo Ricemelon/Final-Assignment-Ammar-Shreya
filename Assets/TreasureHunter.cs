@@ -20,6 +20,7 @@ public class TreasureHunter : MonoBehaviour
     public TextMesh score;
     public TextMesh displayscore;
     public int count = 0;
+    public MouseLook view;
     CollectibleTreasure grabbed;
 
     private float presize = 1f;
@@ -33,6 +34,9 @@ public class TreasureHunter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown("6")){
+            print(center.transform.rotation.x);
+        }
         if(Input.GetKeyDown("9")){ //code for how to raycast was based off of Nick Rewkowski's VrPawn teleport code
             RaycastHit outHit;
             if(Physics.Raycast(rightPointerObject.transform.position,rightPointerObject.transform.forward,out outHit, 100.0f)){
