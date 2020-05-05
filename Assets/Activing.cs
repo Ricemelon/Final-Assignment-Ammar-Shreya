@@ -23,6 +23,11 @@ public class Activing : MonoBehaviour
             script2.enabled = true;
 
         }
+        if(Input.GetKeyDown("q")){
+            script1.enabled = false;
+            script2.enabled = false;
+
+        }
         
     }
 }
