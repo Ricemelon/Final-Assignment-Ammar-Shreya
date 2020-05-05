@@ -41,6 +41,7 @@ public class TreasureHunter : MonoBehaviour
             if(hit.collider.gameObject.layer == 9){
                 print("hit");
                 hit.collider.gameObject.GetComponent<AudioSource>().mute = true;
+                hit.collider.gameObject.GetComponent<Renderer>().enabled = false;
             }
         }
         if(Input.GetKeyDown("9")){ //code for how to raycast was based off of Nick Rewkowski's VrPawn teleport code
